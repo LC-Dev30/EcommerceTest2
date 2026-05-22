@@ -1,0 +1,87 @@
+[
+  {
+    "ContainingType": "EcommerceTest2.Controllers.FacturacionController",
+    "Method": "GenerarFactura",
+    "RelativePath": "api/Facturacion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EcommerceTest2.DTOs.CrearFacturaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "Method": "CrearOrden",
+    "RelativePath": "api/Ordenes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EcommerceTest2.DTOs.CrearOrdenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "Method": "EliminarDetalle",
+    "RelativePath": "api/Ordenes/detalle/{idDetalle}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDetalle",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "Method": "ActualizarCantidad",
+    "RelativePath": "api/Ordenes/detalle/{idDetalle}/cantidad",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDetalle",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "EcommerceTest2.DTOs.ActualizarCantidadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceTest2.Controllers.Clientes",
+    "Method": "RegistrarCliente",
+    "RelativePath": "api/registrar-cliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cliente",
+        "Type": "EcommerceTest2.DTOs.CrearCliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
