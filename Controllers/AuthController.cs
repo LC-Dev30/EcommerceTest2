@@ -19,7 +19,7 @@ namespace EcommerceTest2.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var token = await _servicio.LoginAsync(dto);
+            var token = await _servicio.Login(dto);
 
             if (token == null)
                 return Unauthorized("Credenciales incorrectas.");
