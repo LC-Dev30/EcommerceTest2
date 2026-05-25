@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "EcommerceTest2.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EcommerceTest2.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EcommerceTest2.Controllers.FacturacionController",
     "Method": "GenerarFactura",
     "RelativePath": "api/Facturacion",

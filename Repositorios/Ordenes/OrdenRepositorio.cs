@@ -12,7 +12,7 @@ namespace EcommerceTest2.Repositorios.Ordenes
             _context = context;
         }
 
-        public async Task<Ordene> CrearOrdenAsync(Ordene orden, List<OrdenesDetalle> detalles)
+        public async Task<Ordene> CrearOrden(Ordene orden, List<OrdenesDetalle> detalles)
         {
             await _context.Ordenes.AddAsync(orden);
             await _context.SaveChangesAsync();
@@ -30,14 +30,14 @@ namespace EcommerceTest2.Repositorios.Ordenes
             return orden;
         }
 
-        public async Task<OrdenesDetalle?> ObtenerDetalleAsync(int idDetalle)
+        public async Task<OrdenesDetalle?> ObtenerDetalle(int idDetalle)
         {
             return await _context.OrdenesDetalles
                 .Include(d => d.IdProductoNavigation)
                 .FirstOrDefaultAsync(d => d.Id == idDetalle);
         }
 
-        public async Task ActualizarCantidadAsync(OrdenesDetalle detalle, int nuevaCantidad)
+        public async Task ActualizarCantidad(OrdenesDetalle detalle, int nuevaCantidad)
         {
             var producto = await _context.Productos.FindAsync(detalle.IdProducto);
             producto.Stock += detalle.Cantidad;   
@@ -46,7 +46,7 @@ namespace EcommerceTest2.Repositorios.Ordenes
             await _context.SaveChangesAsync();
         }
 
-        public async Task EliminarDetalleAsync(OrdenesDetalle detalle)
+        public async Task EliminarDetalle(OrdenesDetalle detalle)
         {
             var producto = await _context.Productos.FindAsync(detalle.IdProducto);
             producto.Stock += detalle.Cantidad;   

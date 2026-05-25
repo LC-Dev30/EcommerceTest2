@@ -1,10 +1,12 @@
 ﻿using EcommerceTest2.DTOs;
 using EcommerceTest2.Servicios.Facturaciones;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceTest2.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class FacturacionController : ControllerBase

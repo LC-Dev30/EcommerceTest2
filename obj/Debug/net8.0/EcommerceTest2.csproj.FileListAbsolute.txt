@@ -138,3 +138,5 @@ C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\obj\Debug\net8.
 C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\obj\Debug\net8.0\EcommerceTest2.pdb
 C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\obj\Debug\net8.0\EcommerceTest2.genruntimeconfig.cache
 C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\obj\Debug\net8.0\ref\EcommerceTest2.dll
+C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\obj\Debug\net8.0\EcommerceTest2.sourcelink.json
+C:\Users\Dios es Fiel\source\repos\EcommerceTest2\EcommerceTest2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

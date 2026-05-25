@@ -30,7 +30,7 @@ namespace EcommerceTest2.Servicios.Ordenes
                 Cantidad = d.Cantidad
             }).ToList();
 
-            return await _repositorio.CrearOrdenAsync(orden, detalles);
+            return await _repositorio.CrearOrden(orden, detalles);
         }
 
         public async Task<bool> ActualizarCantidad(int idDetalle, ActualizarCantidadDto dto)
@@ -38,19 +38,19 @@ namespace EcommerceTest2.Servicios.Ordenes
             if (dto.NuevaCantidad <= 0)
                 throw new ArgumentException("La cantidad debe ser mayor a cero.");
 
-            var detalle = await _repositorio.ObtenerDetalleAsync(idDetalle);
+            var detalle = await _repositorio.ObtenerDetalle(idDetalle);
             if (detalle == null) return false;
 
-            await _repositorio.ActualizarCantidadAsync(detalle, dto.NuevaCantidad);
+            await _repositorio.ActualizarCantidad(detalle, dto.NuevaCantidad);
             return true;
         }
 
         public async Task<bool> EliminarDetalle(int idDetalle)
         {
-            var detalle = await _repositorio.ObtenerDetalleAsync(idDetalle);
+            var detalle = await _repositorio.ObtenerDetalle(idDetalle);
             if (detalle == null) return false;
 
-            await _repositorio.EliminarDetalleAsync(detalle);
+            await _repositorio.EliminarDetalle(detalle);
             return true;
         }
     }
