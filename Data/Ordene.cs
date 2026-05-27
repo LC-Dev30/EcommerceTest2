@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EcommerceTest2.Data;
+namespace BackEcommerce.Data;
 
 public partial class Ordene
 {

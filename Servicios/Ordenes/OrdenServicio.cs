@@ -1,8 +1,8 @@
-﻿using EcommerceTest2.Data;
-using EcommerceTest2.DTOs;
-using EcommerceTest2.Repositorios.Ordenes;
+﻿using BackEcommerce.Data;
+using BackEcommerce.DTOs;
+using BackEcommerce.Repositorios.Ordenes;
 
-namespace EcommerceTest2.Servicios.Ordenes
+namespace BackEcommerce.Servicios.Ordenes
 {
     public class OrdenServicio : IServicioOrden
     {

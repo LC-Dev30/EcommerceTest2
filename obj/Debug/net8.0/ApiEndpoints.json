@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "EcommerceTest2.Controllers.AuthController",
+    "ContainingType": "BackEcommerce.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -9,14 +9,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "EcommerceTest2.DTOs.LoginDto",
+        "Type": "BackEcommerce.DTOs.LoginDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EcommerceTest2.Controllers.FacturacionController",
+    "ContainingType": "BackEcommerce.Controllers.FacturacionController",
     "Method": "GenerarFactura",
     "RelativePath": "api/Facturacion",
     "HttpMethod": "POST",
@@ -25,14 +25,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "EcommerceTest2.DTOs.CrearFacturaDto",
+        "Type": "BackEcommerce.DTOs.CrearFacturaDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "ContainingType": "BackEcommerce.Controllers.OrdenesController",
     "Method": "CrearOrden",
     "RelativePath": "api/Ordenes",
     "HttpMethod": "POST",
@@ -41,14 +41,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "EcommerceTest2.DTOs.CrearOrdenDto",
+        "Type": "BackEcommerce.DTOs.CrearOrdenDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "ContainingType": "BackEcommerce.Controllers.OrdenesController",
     "Method": "EliminarDetalle",
     "RelativePath": "api/Ordenes/detalle/{idDetalle}",
     "HttpMethod": "DELETE",
@@ -64,7 +64,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EcommerceTest2.Controllers.OrdenesController",
+    "ContainingType": "BackEcommerce.Controllers.OrdenesController",
     "Method": "ActualizarCantidad",
     "RelativePath": "api/Ordenes/detalle/{idDetalle}/cantidad",
     "HttpMethod": "PATCH",
@@ -78,14 +78,14 @@
       },
       {
         "Name": "dto",
-        "Type": "EcommerceTest2.DTOs.ActualizarCantidadDto",
+        "Type": "BackEcommerce.DTOs.ActualizarCantidadDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EcommerceTest2.Controllers.Clientes",
+    "ContainingType": "BackEcommerce.Controllers.Clientes",
     "Method": "RegistrarCliente",
     "RelativePath": "api/registrar-cliente",
     "HttpMethod": "POST",
@@ -93,8 +93,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cliente",
-        "Type": "EcommerceTest2.DTOs.CrearCliente",
+        "Name": "dto",
+        "Type": "BackEcommerce.DTOs.CrearClienteDto",
         "IsRequired": true
       }
     ],

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceTest2.Data;
+namespace BackEcommerce.Data;
 
 public partial class EcommercePracticeContext : DbContext
 {

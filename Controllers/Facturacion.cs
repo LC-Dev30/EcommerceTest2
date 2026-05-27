@@ -1,10 +1,11 @@
-﻿using EcommerceTest2.DTOs;
-using EcommerceTest2.Servicios.Facturaciones;
+﻿using BackEcommerce.DTOs;
+using BackEcommerce.Servicios.Facturaciones;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceTest2.Controllers
+namespace BackEcommerce.Controllers
 {
     [Authorize]
     [ApiController]
@@ -21,15 +22,9 @@ namespace EcommerceTest2.Controllers
         [HttpPost]
         public async Task<IActionResult> GenerarFactura([FromBody] CrearFacturaDto dto)
         {
-            try
-            {
-                var preview = await _servicio.GenerarFacturaAsync(dto);
-                return Ok(preview);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var preview = await _servicio.GenerarFacturaAsync(dto);
+            if (preview == null) return BadRequest("No se pudu generar la factura correctamente.");
+            return Ok(preview);
         }
     }
 }

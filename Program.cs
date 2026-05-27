@@ -1,15 +1,19 @@
-using EcommerceTest2.Configuracion;
-using EcommerceTest2.Data;
-using EcommerceTest2.Repositorios.Clientes;
-using EcommerceTest2.Repositorios.Facturaciones;
-using EcommerceTest2.Repositorios.Ordenes;
-using EcommerceTest2.Servicios.Auth;
-using EcommerceTest2.Servicios.Clientes;
-using EcommerceTest2.Servicios.Facturaciones;
-using EcommerceTest2.Servicios.Ordenes;
+using BackEcommerce.Configuracion;
+using BackEcommerce.Data;
+using BackEcommerce.Middlewares;
+using BackEcommerce.Repositorios.Clientes;
+using BackEcommerce.Repositorios.Facturaciones;
+using BackEcommerce.Repositorios.Ordenes;
+using BackEcommerce.Servicios.Auth;
+using BackEcommerce.Servicios.Clientes;
+using BackEcommerce.Servicios.Facturaciones;
+using BackEcommerce.Servicios.Ordenes;
+using BackEcommerce.Validadores;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -49,7 +53,9 @@ builder.Services.AddControllers()
             ReferenceHandler.IgnoreCycles;
     });
 
-builder.Services.AddControllers();
+//mapper configuracion
+builder.Services.AddAutoMapper(e => { },AppDomain.CurrentDomain.GetAssemblies());
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -81,8 +87,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddAuthorization();
+builder.Services.StartValidatorExtensionService();
 
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -95,6 +102,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();

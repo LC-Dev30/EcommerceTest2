@@ -1,6 +1,6 @@
-﻿using EcommerceTest2.DTOs;
+﻿using BackEcommerce.DTOs;
 
-namespace EcommerceTest2.Servicios.Auth
+namespace BackEcommerce.Servicios.Auth
 {
     public interface IServicioAuth
     {

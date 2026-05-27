@@ -1,34 +1,39 @@
-﻿using EcommerceTest2.Data;
-using EcommerceTest2.DTOs;
+﻿using AutoMapper;
+using BackEcommerce.Data;
+using BackEcommerce.DTOs;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceTest2.Repositorios.Clientes
+namespace BackEcommerce.Repositorios.Clientes
 {
     public class ClientesRepositorio : IClientesRepositorio
     {
         private EcommercePracticeContext _context;
+       
 
         public ClientesRepositorio(EcommercePracticeContext context)
         {
             _context = context;
         }
 
-        public async Task<ResponseResult> RegistrarUsuario(CrearCliente cliente)
+        public async Task<InformacionCliente?> ObtenerClientePorEmail(string email)
         {
+            var cliente = await _context.Clientes
+                .AsNoTracking()
+                .Where(e => e.Email == email)
+                .Select(e => new InformacionCliente
+                {
+                    Nombre = e.Nombre,
+                    Email = e.Email
+                }).FirstOrDefaultAsync();
 
-            var find = await _context.Clientes.FirstOrDefaultAsync(e => e.Email == cliente.Email);
+            if (cliente == null) return null;
 
-            if (find != null)
-                return new ResponseResult { StatusCode = 400, Message = "El Cliente ya existe" };
+            return cliente;
+        }
 
-            var mapping = new Cliente
-            {
-                Nombre = cliente.Nombre,
-                Email = cliente.Email,
-                Password = cliente.Password
-            };
-
-            await _context.Clientes.AddAsync(mapping);
+        public async Task<ResponseResult> RegistrarCliente(Cliente cliente)
+        {
+            await _context.Clientes.AddAsync(cliente);
             await _context.SaveChangesAsync();
             return new ResponseResult { StatusCode = 201, Message = "Cliente creado satisfactoriamente" };
         }

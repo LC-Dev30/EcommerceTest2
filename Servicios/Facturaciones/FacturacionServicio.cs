@@ -1,8 +1,8 @@
-﻿using EcommerceTest2.Data;
-using EcommerceTest2.DTOs;
-using EcommerceTest2.Repositorios.Facturaciones;
+﻿using BackEcommerce.Data;
+using BackEcommerce.DTOs;
+using BackEcommerce.Repositorios.Facturaciones;
 
-namespace EcommerceTest2.Servicios.Facturaciones
+namespace BackEcommerce.Servicios.Facturaciones
 {
     public class FacturacionServicio : IServicioFacturacion
     {

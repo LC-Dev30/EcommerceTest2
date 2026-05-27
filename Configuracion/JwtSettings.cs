@@ -1,4 +1,4 @@
-﻿namespace EcommerceTest2.Configuracion
+﻿namespace BackEcommerce.Configuracion
 {
     public class JwtSettings
     {

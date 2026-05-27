@@ -1,4 +1,4 @@
-﻿namespace EcommerceTest2.DTOs
+﻿namespace BackEcommerce.DTOs
 {
     public class CrearFacturaDto
     {

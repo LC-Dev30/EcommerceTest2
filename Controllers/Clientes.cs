@@ -1,32 +1,37 @@
-﻿using EcommerceTest2.DTOs;
-using EcommerceTest2.Servicios.Clientes;
+﻿using BackEcommerce.DTOs;
+using BackEcommerce.Servicios.Clientes;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceTest2.Controllers
+namespace BackEcommerce.Controllers
 {
     [Route("api/")]
     [ApiController]
     public class Clientes : ControllerBase
     {
         private IServicioCliente _service;
-        public Clientes(IServicioCliente service)
+        private readonly IValidator<CrearClienteDto> _validator;
+        public Clientes(IServicioCliente service, IValidator<CrearClienteDto> validator)
         {
+            _validator = validator;
             _service = service;
         }
 
         [HttpPost("registrar-cliente")]
-        public async Task<IActionResult> RegistrarCliente(CrearCliente cliente)
+        public async Task<IActionResult> RegistrarCliente(CrearClienteDto dto)
         {
-            if (string.IsNullOrWhiteSpace(cliente.Nombre))
-                return BadRequest("Nombre es requerido");
+            var validarCliente = await _validator.ValidateAsync(dto);
 
-           var serviceresult = await _service.RegistarClienteUseCase(cliente);
+            if (!validarCliente.IsValid)
+                return BadRequest(validarCliente.Errors.Select(e => e.ErrorMessage));
 
-            if (serviceresult.StatusCode != 201)
-                return Problem(detail: serviceresult.Message, statusCode: serviceresult.StatusCode);
+            var servicio = await _service.RegistarClienteUseCase(dto);
 
-            return Ok(serviceresult);
+            if (servicio.StatusCode != 201)
+                return Problem(detail: servicio.Message, statusCode: servicio.StatusCode);
+
+            return CreatedAtAction(nameof(RegistrarCliente), servicio);
         }
     }
 }

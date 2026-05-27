@@ -45,17 +45,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCliente"
+                "$ref": "#/components/schemas/CrearClienteDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCliente"
+                "$ref": "#/components/schemas/CrearClienteDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCliente"
+                "$ref": "#/components/schemas/CrearClienteDto"
               }
             }
           }
@@ -207,7 +207,7 @@
         },
         "additionalProperties": false
       },
-      "CrearCliente": {
+      "CrearClienteDto": {
         "type": "object",
         "properties": {
           "nombre": {

@@ -1,9 +1,11 @@
-﻿using EcommerceTest2.DTOs;
+﻿using BackEcommerce.Data;
+using BackEcommerce.DTOs;
 
-namespace EcommerceTest2.Repositorios.Clientes
+namespace BackEcommerce.Repositorios.Clientes
 {
     public interface IClientesRepositorio
     {
-        Task<ResponseResult> RegistrarUsuario(CrearCliente cliente);
+        Task<ResponseResult> RegistrarCliente(Cliente cliente);
+        Task<InformacionCliente?> ObtenerClientePorEmail(string email);
     }
 }

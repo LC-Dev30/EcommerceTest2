@@ -1,6 +1,6 @@
-﻿using EcommerceTest2.DTOs;
+﻿using BackEcommerce.DTOs;
 
-namespace EcommerceTest2.Servicios.Facturaciones
+namespace BackEcommerce.Servicios.Facturaciones
 {
     public interface IServicioFacturacion
     {

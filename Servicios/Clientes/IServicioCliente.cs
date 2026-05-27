@@ -1,9 +1,9 @@
-﻿using EcommerceTest2.DTOs;
+﻿using BackEcommerce.DTOs;
 
-namespace EcommerceTest2.Servicios.Clientes
+namespace BackEcommerce.Servicios.Clientes
 {
     public interface IServicioCliente
     {
-        Task<ResponseResult> RegistarClienteUseCase(CrearCliente cliente);
+        Task<ResponseResult> RegistarClienteUseCase(CrearClienteDto dto);
     }
 }

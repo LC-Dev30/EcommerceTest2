@@ -1,7 +1,7 @@
-﻿using EcommerceTest2.Data;
-using EcommerceTest2.DTOs;
+﻿using BackEcommerce.Data;
+using BackEcommerce.DTOs;
 
-namespace EcommerceTest2.Servicios.Ordenes
+namespace BackEcommerce.Servicios.Ordenes
 {
     public interface IServicioOrden
     {

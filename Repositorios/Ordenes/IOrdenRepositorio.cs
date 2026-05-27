@@ -1,6 +1,6 @@
-﻿using EcommerceTest2.Data;
+﻿using BackEcommerce.Data;
 
-namespace EcommerceTest2.Repositorios.Ordenes
+namespace BackEcommerce.Repositorios.Ordenes
 {
     public interface IOrdenRepositorio
     {

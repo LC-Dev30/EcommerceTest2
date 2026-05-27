@@ -1,6 +1,6 @@
-﻿namespace EcommerceTest2.DTOs
+﻿namespace BackEcommerce.DTOs
 {
-    public class CrearCliente
+    public class CrearClienteDto
     {
         public string Nombre { get; set; }
         public string Email { get; set; }
