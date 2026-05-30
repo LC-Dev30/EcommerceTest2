@@ -23,7 +23,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<EcommercePracticeContext>(option =>
 {
-    option.UseSqlServer(builder.Configuration.GetConnectionString("Conexion"));
+    option.UseSqlServer(builder.Configuration.GetValue<string>("DataBaseCloud"));
 });
 
 builder.Services.AddCors(options =>
