@@ -24,7 +24,8 @@ namespace BackEcommerce.Servicios.Auth
         public async Task<string?> Login(LoginDto dto)
         {
             var cliente = await _context.Clientes
-                .FirstOrDefaultAsync(c => c.Email == dto.Email && c.Password == dto.Password);
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Email == dto.Email);
 
             if (cliente == null) return null;
 
